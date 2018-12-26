@@ -1,0 +1,144 @@
+<configuracion>
+	<!-- ATRIBUTOS -->
+	<atributo>
+		<nodo>/html[1]/body[1]/section[1]/nav[1]/div[2]/ul[1]</nodo>
+		<nombre>class</nombre>
+		<valor>navbar-nav nav-dropdown nav-right nav-link link text-white display-4</valor>
+	</atributo>
+
+	<!-- REEMPLEAZO DE TEXTO -->
+	<reemplazoTexto>
+	    <nodo>/html[1]/head[1]</nodo>
+	    <texto> </texto>
+    </reemplazoTexto> 
+  	<reemplazoTexto>
+	    <nodo>/html[1]/body[1]/section[1]/nav[1]/text()[1]</nodo>
+	    <texto>&lt;?php if ($logo): ?></texto>
+    </reemplazoTexto>    
+    <reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[1]/nav[1]/text()[3]</nodo>
+    	<texto>&lt;?php endif; ?>
+
+    			&lt;?php if ($secondary_menu): ?></texto>
+	</reemplazoTexto> 
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[1]/nav[1]/text()[4]</nodo>
+    	<texto>&lt;?php if ($secondary_menu): ?></texto>
+	</reemplazoTexto>
+
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[2]/text()[1]</nodo>
+    	<texto>&lt;?php if ($site_name || $site_slogan): ?></texto>
+	</reemplazoTexto>
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[2]/text()[2]</nodo>
+    	<texto>&lt;?php endif; ?>
+
+    &lt;?php print render($page['header']); ?></texto>
+	</reemplazoTexto>
+
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[2]/div[1]/div[1]/div[1]/text()[1]</nodo>
+    	<texto>&lt;?php if ($site_name): ?></texto>
+	</reemplazoTexto>
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[2]/div[1]/div[1]/div[1]/text()[2]</nodo>
+    	<texto>&lt;?php endif; ?>
+
+              &lt;?php if ($site_slogan): ?></texto>
+	</reemplazoTexto>
+
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[4]/text()[1]</nodo>
+    	<texto>&lt;?php if ($page['footer']): ?></texto>
+	</reemplazoTexto>
+	<reemplazoTexto>
+    	<nodo>/html[1]/body[1]/section[4]/text()[2]</nodo>
+    	<texto>&lt;?php endif; ?></texto>
+	</reemplazoTexto>
+
+	<!-- REEMPLAZO DE CODIGO -->
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[1]/nav[1]/div[1]/div[1]/span[1]</nodo>
+    	<texto>&lt;a href="&lt;?php print $front_page; ?>" title="&lt;?php print t('Home'); ?>" rel="home" id="logo">
+                  &lt;img src="&lt;?php print $logo; ?>" alt="&lt;?php print t('Home'); ?>" />
+                &lt;/a></texto>
+	</reemplazoCodigo> 
+
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[1]/nav[1]/div[2]/ul[1]</nodo>
+    	<texto>&lt;?php print theme('links__system_secondary_menu', array(
+                'links' => $secondary_menu,
+                'attributes' => array(
+                  'id' => 'secondary-menu-links',
+                  'class' => array('links', 'inline', 'clearfix'),
+                ),
+              )); ?></texto>
+	</reemplazoCodigo> 
+
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[2]/div[1]/div[1]/div[1]/h1[1]</nodo>
+    	<texto>&lt;?php print $site_name; ?></texto>
+	</reemplazoCodigo>
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[2]/div[1]/div[1]/div[1]/h3[1]</nodo>
+    	<texto>&lt;?php print $site_slogan; ?></texto>
+	</reemplazoCodigo>
+
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[3]/div[1]/div[1]/div[1]</nodo>
+    	<texto>&lt;?php print render($page['sidebar_first']); ?></texto>
+	</reemplazoCodigo>
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[3]/div[2]</nodo>
+    	<texto>&lt;?php print render($page['content']); ?></texto>
+	</reemplazoCodigo>
+
+	<reemplazoCodigo>
+    	<nodo>/html[1]/body[1]/section[4]/div[1]/div[1]/div[1]/p[1]</nodo>
+    	<texto>&lt;?php print render($page['footer']); ?></texto>
+	</reemplazoCodigo>
+
+	<!-- ELIMINACION DE NODOS -->
+	<eliminacionNodo>
+	    <nodo>/html[1]/head[1]</nodo>
+    </eliminacionNodo> 
+
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/section[1]/nav[1]/button[1]</nodo>
+    </eliminacionNodo>
+
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/section[1]/nav[1]/div[1]/div[1]/span[2]</nodo>
+    </eliminacionNodo>
+
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[1]</nodo>
+    </eliminacionNodo>
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[1]</nodo>
+    </eliminacionNodo>
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[2]</nodo>
+    </eliminacionNodo>
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[3]</nodo>
+    </eliminacionNodo>
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[4]</nodo>
+    </eliminacionNodo>
+    <eliminacionNodo>
+	    <nodo>/html[1]/body[1]/script[5]</nodo>
+    </eliminacionNodo>
+
+	<!-- FICHERO .INFO -->
+  	<infoFile>
+		<estilos>
+		</estilos>
+		<regiones>
+			<content>
+				regions[content] = Content
+			</content>
+		</regiones>
+	</infoFile>
+</configuracion>
